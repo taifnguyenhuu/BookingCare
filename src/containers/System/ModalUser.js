@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { FormattedMessage } from "react-intl";
 import { connect } from "react-redux";
 import { Button, Modal, ModalHeader, ModalFooter, ModalBody } from "reactstrap";
-
+import { emitter } from "../../utils/emitter";
 class ModalUser extends Component {
   constructor(props) {
     super(props);
@@ -13,8 +13,24 @@ class ModalUser extends Component {
       lastName: "",
       address: "",
     };
+    this.listenToEmitter();
   }
-  componentDidMount() {}
+
+  listenToEmitter() {
+    emitter.on("EVENT_CLEAR_MODAL_DATA", () => {
+      //reset state
+      this.setState({
+        email: "",
+        password: "",
+        firstName: "",
+        lastName: "",
+        address: "",
+      });
+    });
+  }
+  componentDidMount() {
+    console.log("mouting modal");
+  }
 
   toggle = () => {
     this.props.toggleFromParent();
@@ -66,7 +82,7 @@ class ModalUser extends Component {
             <div className="input-container">
               <babel>Email</babel>
               <input
-                type="text"
+                type="email"
                 onChange={(event) => {
                   this.handleOnchaneInput(event, "email");
                 }}
