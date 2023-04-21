@@ -53,15 +53,29 @@
       }
       .language-vi {
         cursor: pointer;
+        opacity: 0.2;
         &.active {
-          color: orange;
+          opacity: 1;
+          span {
+            color: orange;
+          }
+        }
+        &:hover {
+          opacity: 0.8;
         }
       }
       .language-en {
         margin: 0 10px;
         cursor: pointer;
+        opacity: 0.2;
         &.active {
-          color: blue;
+          opacity: 1;
+          span {
+            color: blue;
+          }
+        }
+        &:hover {
+          opacity: 0.8;
         }
       }
     }
@@ -71,10 +85,10 @@
 .home-header-banner {
   background: url(../../assets/header-background.jpg);
 
-  height: 485px;
+  height: 600px;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: initial; //cd -> center
+  background-position: center; //cd -> center
   display: flex;
   flex-direction: column;
 
