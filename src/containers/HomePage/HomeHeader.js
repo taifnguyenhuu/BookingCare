@@ -4,12 +4,12 @@ import "./HomeHeader.scss";
 import logo from "../../assets/logo.svg";
 import { FormattedMessage } from "react-intl";
 import { LANGUAGES } from "../../utils";
-import { changelLanguageApp } from "../../store/actions";
+import { changeLanguageApp } from "../../store/actions";
 import { dispatch } from "../../redux";
 
 class HomeHeader extends Component {
-  changelLanguage = (language) => {
-    this.props.changelLanguageAppRedux(language);
+  changeLanguage = (language) => {
+    this.props.changeLanguageAppRedux(language);
     //fire redux event: acions
   };
   render() {
@@ -80,7 +80,7 @@ class HomeHeader extends Component {
               >
                 <span
                   onClick={() => {
-                    this.changelLanguage(LANGUAGES.VI);
+                    this.changeLanguage(LANGUAGES.VI);
                   }}
                 >
                   VN
@@ -95,7 +95,7 @@ class HomeHeader extends Component {
               >
                 <span
                   onClick={() => {
-                    this.changelLanguage(LANGUAGES.EN);
+                    this.changeLanguage(LANGUAGES.EN);
                   }}
                 >
                   EN
@@ -190,8 +190,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    changelLanguageAppRedux: (language) =>
-      dispatch(changelLanguageApp(language)),
+    changeLanguageAppRedux: (language) => dispatch(changeLanguageApp(language)),
   };
 };
 
