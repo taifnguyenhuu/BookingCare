@@ -22,8 +22,8 @@ class Header extends Component {
           <Navigator menus={adminMenu} />
         </div>
         <div className="languages">
-          <span className="welcom">
-            <FormattedMessage id="homeheader.welcom" />
+          <span className="welcome">
+            <FormattedMessage id="homeheader.welcome" />
             {userInfo && userInfo.firstName ? userInfo.firstName : ""} !
           </span>
           <span

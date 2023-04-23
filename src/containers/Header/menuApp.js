@@ -1,7 +1,7 @@
 export const adminMenu = [
   {
     //Quản lý người dùng
-    name: "menu.system.header",
+    name: "menu.admin.manage-user",
     menus: [
       {
         name: "menu.admin.crud",
@@ -22,7 +22,7 @@ export const adminMenu = [
         //   },
       },
       {
-        name: "menu.system.manage-admin",
+        name: "menu.admin.manage-admin",
         link: "/system/user-admin",
       },
 
@@ -52,7 +52,7 @@ export const adminMenu = [
   {
     //Quản lý cẩm nang
     name: "menu.admin.handbook",
-    menu: [
+    menus: [
       {
         name: "menu.admin.manage-handbook",
         link: "/system/manage-handbook",
