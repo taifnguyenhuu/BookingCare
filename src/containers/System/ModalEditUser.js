@@ -136,7 +136,7 @@ class ModalEditUser extends Component {
         <ModalFooter>
           <button
             color="primary"
-            className="px-3 rounded text-white bg-primary"
+            className="px-3 rounded text-white bg-primary btn btn-primary"
             onClick={() => {
               this.handleSaveUser();
             }}
@@ -145,7 +145,7 @@ class ModalEditUser extends Component {
           </button>
           <button
             color="secondary"
-            className="px-3 rounded text-white bg-secondary"
+            className="px-3 rounded text-white bg-secondary btn btn-secondary"
             onClick={() => {
               this.toggle();
             }}

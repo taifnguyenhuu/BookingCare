@@ -134,7 +134,7 @@ class ModalUser extends Component {
         <ModalFooter>
           <button
             color="primary"
-            className="px-3 rounded text-white bg-primary"
+            className="btn btn-primary px-3 rounded text-white bg-primary "
             onClick={() => {
               this.handleAddNewUser();
             }}
@@ -143,7 +143,7 @@ class ModalUser extends Component {
           </button>
           <button
             color="secondary"
-            className="px-3 rounded text-white bg-secondary"
+            className="btn btn-secondary px-3 rounded text-white bg-secondary"
             onClick={() => {
               this.toggle();
             }}
