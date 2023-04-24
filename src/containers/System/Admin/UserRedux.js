@@ -3,6 +3,7 @@ import { FormattedMessage } from "react-intl";
 import { connect } from "react-redux";
 import { getAllCodeService } from "../../../services/userService";
 import { LANGUAGES } from "../../../utils";
+import * as actions from "../../../store/actions";
 
 class UserRedux extends Component {
   constructor(props) {
@@ -13,22 +14,36 @@ class UserRedux extends Component {
   }
 
   async componentDidMount() {
-    try {
-      let res = await getAllCodeService("gender");
-      if (res && res.errCode === 0) {
-        this.setState({
-          genderArr: res.data,
-        });
-      }
-      console.log("TaiHN check res: ", res);
-    } catch (e) {
-      console.log(e);
+    this.props.getGenderStart();
+    //this.props.dispatch(actions.getGenderStart()_
+    // try {
+    //   let res = await getAllCodeService("gender");
+    //   if (res && res.errCode === 0) {
+    //     this.setState({
+    //       genderArr: res.data,
+    //     });
+    //   }
+    //   console.log("TaiHN check res: ", res);
+    // } catch (e) {
+    //   console.log(e);
+    // }
+  }
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    //render => diUpdate
+    // hiện tại (this) và quá khứ (preious)
+    // [] [3]
+    //[3] [3]
+    if (prevProps.genderRedux !== this.props.genderRedux) {
+      this.setState({
+        genderArr: this.props.genderRedux,
+      });
     }
   }
 
   render() {
     let genders = this.state.genderArr;
     let language = this.props.language;
+    console.log("TaiHN checck props from redux: ", this.props.genderRedux);
     return (
       <div className="user-redux-container">
         <div className="title">Learn user with TaiHN</div>
@@ -133,11 +148,16 @@ class UserRedux extends Component {
 const mapStateToProps = (state) => {
   return {
     language: state.app.language,
+    genderRedux: state.admin.genders,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {};
+  return {
+    getGenderStart: () => dispatch(actions.fetchGenderStart()),
+    //processLogout: () => dispatch(actions.processLogout())
+    //changeLanguageAppRedux: (language) => dispatch(actions.changeLanguage)
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserRedux);
