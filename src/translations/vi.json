@@ -5,9 +5,9 @@
     "health-facility": "Cơ sở y tế",
     "select-room": "Chọn bệnh viện phòng khám",
     "doctor": "Bác sĩ",
-    "select-doctor": "Chon bác si giỏi",
+    "select-doctor": "Chọn bác sĩ giỏi",
     "fee": "Gói khám",
-    "check-health": "Khám súc khóe tóng quát",
+    "check-health": "Khám sức khỏe tổng quát",
     "support": "Hỗ trợ",
     "welcome": "Xin chào, "
   },
@@ -51,5 +51,9 @@
     "image": "Ảnh đại diện",
     "save": "Lưu user",
     "edit": "Lưu thay đổi"
+  },
+  "homepage": {
+    "outstanding-doctor": "Bác sĩ nổi bậc tuần qua",
+    "more-infor": "xem thêm"
   }
 }
