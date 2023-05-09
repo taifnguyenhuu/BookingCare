@@ -1,3 +1,5 @@
+import { constant } from "lodash";
+
 export const adminMenu = [
   {
     //Quản lý người dùng
@@ -21,12 +23,17 @@ export const adminMenu = [
         //     link: "/system/user-manage",
         //   },
       },
-      {
-        name: "menu.admin.manage-admin",
-        link: "/system/user-admin",
-      },
+      // {
+      //   name: "menu.admin.manage-admin",
+      //   link: "/system/user-admin",
+      // },
 
       // { name: 'menu.system.system-parameter.header', link: '/system/system-parameter' },
+      {
+        //Quản lý kế hoạch khám bệnh của bác sĩ
+        name: "menu.doctor.manage-schedule",
+        link: "/doctor/manage-schedule",
+      },
     ],
   },
   {
@@ -56,6 +63,18 @@ export const adminMenu = [
       {
         name: "menu.admin.manage-handbook",
         link: "/system/manage-handbook",
+      },
+    ],
+  },
+];
+export const doctorMenu = [
+  {
+    name: "menu.admin.manage-user",
+    menus: [
+      {
+        //Quản lý kế hoạch của bác sĩ
+        name: "menu.doctor.manage-schedule",
+        link: "/doctor/manage-schedule",
       },
     ],
   },
